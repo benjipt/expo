@@ -99,6 +99,13 @@ export interface VideoViewProps extends ViewProps {
   onPictureInPictureStop?: () => void;
 
   /**
+   * A callback to call before the video player exits Picture in Picture (PiP) mode.
+   * This callback allows you to perform asynchronous operations before the PiP mode ends.
+   * @platform ios
+   */
+  onPictureInPictureWillStop?: () => Promise<void>;
+
+  /**
    * Determines whether the player allows Picture in Picture (PiP) mode.
    * > **Note:** The `supportsPictureInPicture` property of the [config plugin](#configuration-in-app-config)
    * > has to be configured for the PiP to work.
